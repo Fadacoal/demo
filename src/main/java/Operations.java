@@ -16,6 +16,10 @@ public class Operations extends Variables {
         return result;
     }
 
+    // public void setSum(){} -- setSum() is already in final cant be modified
+    public void testClass(){} // needed to be created always since there is an abstract
     private void hiddenOperation(){}
     protected void protectedOperation(){}
+
+
 }

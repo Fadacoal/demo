@@ -1,4 +1,3 @@
-
 public class JavaTutorial {
 
     public static void main(String[] args) {
@@ -9,13 +8,13 @@ public class JavaTutorial {
         String[] arrayOfChoices = {"addition", "exponent"};
 
         Operations object = new Operations();
-
+        object.setSum();
         for (String i : arrayOfChoices) {
             if (i == "addition") {
-                sum = object.Addition(x, y);
+                sum = object.addition(x, y);
                 System.out.println(sum);
             } else if (i == "exponent") {
-                result = object.Exponent(x, y);
+                result = object.exponent(x, y);
                 System.out.println(result);
             } else {
                 System.out.println("Choice is not been made");

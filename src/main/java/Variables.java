@@ -5,7 +5,9 @@ abstract class Variables {
         return sum;
     }
 
-    public void setSum(){
+    public final void setSum(){
         int sum = this.sum;
     }
+
+    abstract void testClass();
 }
