@@ -1,24 +1,28 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class JavaTutorial {
 
     public static void main(String[] args) {
-        int x = 2;
-        int y = 3;
-        int sum;
-        double result;
-        String[] arrayOfChoices = {"addition", "exponent"};
+        String line = "This order was placed for A123 OK?";
+        String pattern = "(.*)(\\d)(.*)";
 
-        Operations object = new Operations();
-        object.setSum();
-        for (String i : arrayOfChoices) {
-            if (i == "addition") {
-                sum = object.addition(x, y);
-                System.out.println(sum);
-            } else if (i == "exponent") {
-                result = object.exponent(x, y);
-                System.out.println(result);
-            } else {
-                System.out.println("Choice is not been made");
-            }
+        RegEx regex = new RegEx();
+        Pattern r = Pattern.compile(pattern);
+
+
+        Matcher m = r.matcher(line);
+        if (m.find()) {
+            System.out.println(m.start());
+            System.out.println(m.start(3));
+            System.out.println(m.end());
+            System.out.println(m.end(1));
+            System.out.println("Found value: " + m.group(0));
+            System.out.println("Found value: " + m.group(1));
+            System.out.println("Found value: " + m.group(2));
+            System.out.println("Found value: " + m.group(3));
+        } else {
+            System.out.println("NO MATCH");
         }
     }
 }
