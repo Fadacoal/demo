@@ -3,15 +3,22 @@ import java.io.*;
 public class JavaTutorial {
 
     public static void main(String[] args) throws IOException {
-        int a[] = new int[2];
+        FileReader fr = null;
         try {
-            System.out.println("Access element three :" + a[3]);
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Exception thrown  :" + e);
-        } finally {
-            a[0] = 6;
-            System.out.println("First element value: " + a[0]);
-            System.out.println("The finally statement is executed");
+            File file = new File("trial.txt");
+            fr = new FileReader(file);
+            char [] a = new char[50];
+            fr.read(a);   // reads the content to the array
+            for(char c : a)
+                System.out.print(c);   // prints the characters one by one
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                fr.close();
+            } catch (NullPointerException | IOException ex ) {
+                ex.printStackTrace();
+            }
         }
     }
 }
