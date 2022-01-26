@@ -1,24 +1,29 @@
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 public class JavaTutorial {
 
-    public static void main(String[] args) {
-        int x = 2;
-        int y = 3;
-        int sum;
-        double result;
-        String[] arrayOfChoices = {"addition", "exponent"};
+    public static void main(String[] args) throws IOException {
+        FileInputStream in = null;
+        FileOutputStream out = null;
 
-        Operations object = new Operations();
-        object.setSum();
-        for (String i : arrayOfChoices) {
-            if (i == "addition") {
-                sum = object.addition(x, y);
-                System.out.println(sum);
-            } else if (i == "exponent") {
-                result = object.exponent(x, y);
-                System.out.println(result);
-            } else {
-                System.out.println("Choice is not been made");
+        try {
+            in = new FileInputStream("input.txt");
+            out = new FileOutputStream("output.txt");
+
+            int c;
+            while ((c = in.read()) != -1) {
+                out.write(c);
+            }
+        } finally {
+            if (in != null) {
+                in.close();
+            }
+            if (out != null) {
+                out.close();
             }
         }
     }
 }
+

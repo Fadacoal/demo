@@ -11,6 +11,6 @@ class AccountSpec extends Specification {
         when:
         AccountController.getAccountsById(1)
         then:
-        return new ResponseEntity<>(accounts);
+        return new ResponseEntity<>(accounts)
     }
 }
