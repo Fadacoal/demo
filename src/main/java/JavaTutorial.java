@@ -1,39 +1,37 @@
-class Super_class {
-    int num = 20;
+class Superclass {
+    int age;
+    String s;
 
-    // display method of superclass
-    public void display() {
-        System.out.println("This is the display method of superclass");
+    Superclass(int age) {
+        this.age = age;
+    }
+
+    Superclass(String s) {
+        this.s = s;
+    }
+
+    public void getAge() {
+        System.out.println("The value of the variable named age in super class is: " + age);
+    }
+
+    public void getString() {
+        System.out.println("The value of String is " + s);
     }
 }
 
-public class JavaTutorial extends Super_class {
-    int num = 10;
-
-    // display method of sub class
-    public void display() {
-        System.out.println("This is the display method of subclass");
+public class JavaTutorial extends Superclass {
+    JavaTutorial(int age) {
+        super(age);
     }
 
-    public void my_method() {
-        // Instantiating subclass
-        JavaTutorial sub = new JavaTutorial();
-
-        // Invoking the display() method of sub class
-        sub.display();
-
-        // Invoking the display() method of superclass
-        super.display();
-
-        // printing the value of variable num of subclass
-        System.out.println("value of the variable named num in sub class:"+ sub.num);
-
-        // printing the value of variable num of superclass
-        System.out.println("value of the variable named num in super class:"+ super.num);
+    JavaTutorial(String s) {
+        super(s);
     }
 
     public static void main(String args[]) {
-        JavaTutorial obj = new JavaTutorial();
-        obj.my_method();
+        JavaTutorial s = new JavaTutorial(24);
+        s.getAge();
+        s = new JavaTutorial("Test");
+        s.getString();
     }
 }
