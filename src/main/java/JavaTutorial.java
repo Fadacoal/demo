@@ -3,12 +3,17 @@ import java.io.*;
 public class JavaTutorial {
 
     public static void main(String[] args) throws IOException {
-        try (FileReader fr = new FileReader("E://file.txt")){
-            char [] a = new char[50];
-            fr.read(a);   // reads the content to the array
-            for(char c : a)
-                System.out.print(c);   // prints the characters one by one
-        } catch (IOException e) {
+        CheckingAccount c = new CheckingAccount(101);
+        System.out.println("Depositing $500...");
+        c.deposit(500.00);
+
+        try {
+            System.out.println("\nWithdrawing $100...");
+            c.withdraw(100.00);
+            System.out.println("\nWithdrawing $600...");
+            c.withdraw(600.00);
+        } catch (UserException e) {
+            System.out.println("Sorry, but you are short $" + e.getAmount());
             e.printStackTrace();
         }
     }
