@@ -1,37 +1,22 @@
-class Superclass {
-    int age;
-    String s;
-
-    Superclass(int age) {
-        this.age = age;
-    }
-
-    Superclass(String s) {
-        this.s = s;
-    }
-
-    public void getAge() {
-        System.out.println("The value of the variable named age in super class is: " + age);
-    }
-
-    public void getString() {
-        System.out.println("The value of String is " + s);
+class Animal {
+    public void move() {
+        System.out.println("Animals can move");
     }
 }
 
-public class JavaTutorial extends Superclass {
-    JavaTutorial(int age) {
-        super(age);
+class Dog extends Animal {
+    public void move() {
+        System.out.println("Dogs can walk and run");
     }
+}
 
-    JavaTutorial(String s) {
-        super(s);
-    }
+public class JavaTutorial {
 
     public static void main(String args[]) {
-        JavaTutorial s = new JavaTutorial(24);
-        s.getAge();
-        s = new JavaTutorial("Test");
-        s.getString();
+        Animal a = new Animal();   // Animal reference and object
+        Animal b = new Dog();   // Animal reference but Dog object
+
+        a.move();   // runs the method in Animal class
+        b.move();   // runs the method in Dog class
     }
 }
