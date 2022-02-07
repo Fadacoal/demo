@@ -1,11 +1,20 @@
-public class JavaTutorial {
+public class JavaTutorial implements Animal {
 
-    public static void main(String [] args) {
-        Salary s = new Salary("Mohd Mohtashim", "Ambehta, UP", 3, 3600.00);
-        Employee e = new Salary("John Adams", "Boston, MA", 2, 2400.00);
-        System.out.println("Call mailCheck using Salary reference --");
-        s.mailCheck();
-        System.out.println("\n Call mailCheck using Employee reference--");
-        e.mailCheck();
+    public void eat() {
+        System.out.println("Mammal eats");
+    }
+
+    public void travel() {
+        System.out.println("Mammal travels");
+    }
+
+    public int noOfLegs() {
+        return 0;
+    }
+
+    public static void main(String[] args) {
+        JavaTutorial m = new JavaTutorial();
+        m.eat();
+        m.travel();
     }
 }
