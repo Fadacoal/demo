@@ -8,8 +8,8 @@ public class Salary extends Employee {
 
     public void mailCheck() {
         System.out.println("Within mailCheck of Salary class ");
-        System.out.println("Mailing check to " + getName()
-                + " with salary " + salary);
+        System.out.println("Mailing check to " + getName() + " with salary " + salary);
+        super.mailCheck();
     }
 
     public double getSalary() {
@@ -17,13 +17,13 @@ public class Salary extends Employee {
     }
 
     public void setSalary(double newSalary) {
-        if(newSalary >= 0.0) {
+        if (newSalary >= 0.0) {
             salary = newSalary;
         }
     }
 
     public double computePay() {
         System.out.println("Computing salary pay for " + getName());
-        return salary/52;
+        return salary / 52;
     }
 }

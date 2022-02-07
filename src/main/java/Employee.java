@@ -11,7 +11,11 @@ public class Employee {
     }
 
     public void mailCheck() {
-        System.out.println("Mailing a check to " + this.name + " " + this.address);
+       System.out.println("Mailing a check to " + this.name + " " + this.address);
+    }
+
+    public void setSalary(){
+
     }
 
     public String toString() {
